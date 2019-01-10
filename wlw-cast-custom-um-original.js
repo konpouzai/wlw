@@ -119,7 +119,7 @@ if(d.URL == CAST_LIST_URL){
 		var crc = parseInt(p1[2].innerHTML);
 		// 総撤退数 ... withdraw count
 		var wdc = parseInt(p1[3].innerHTML);
-
+		
 		var p2 = d.querySelectorAll('.block_playdata_02_text');
 		// キャスト別評価(平均) ... total page
 		var tp = parseFloat(p2[0].innerHTML);
@@ -149,6 +149,16 @@ if(d.URL == CAST_LIST_URL){
 		var kr = 0;
 		if (wdc!=0) {
 		kr = Math.round(crc/wdc*100)/100;
+		}
+		// 1戦あたりの撃破数 ... kill per round
+		var kpr = 0;
+		if ((wc+lc)!=0) {
+		kpr = Math.round(crc/(wc+lc));
+		}
+		// 1戦あたりの撤退数 ... death per round
+		var dpr = 0;
+		if ((wc+lc)!=0) {
+		dpr = Math.round(wdc/(wc+lc));
 		}
 
 		// 全キャスト勝率 ... all win rate
@@ -212,9 +222,10 @@ if(d.URL == CAST_LIST_URL){
 			// 日時情報、使用率、勝利数、敗北数、勝率、総撃破数、総撤退数、Kill Ratio、
 			// キャスト別評価(平均)、勝利時(平均)、敗北時(平均)、
 			// 獲得ナイス(平均)、勝利時(平均)、敗北時(平均)
+			// 1戦あたりの撃破数、1戦あたりの撤退数、
 			var now = new Date().getTime();
-			var cd = [now, ur, wc, lc, wr, crc, wdc, kr, tp, wp, lp, tn, wn, ln];
-			var pcd = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+			var cd = [now, ur, wc, lc, wr, crc, wdc, kr, tp, wp, lp, tn, wn, ln, kpr, dpr];
+			var pcd = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 			var ppcd = pcd.concat();
 
 			var day = 1000*3600*24;
@@ -292,6 +303,8 @@ if(d.URL == CAST_LIST_URL){
 			insert(2,"敗北数",lc+"<span class=\"font_small\">敗</span>");
 			insert(2,"勝率",wr+"%");
 			insert(4,"Kill Ratio",kr);
+			insert(4,"1戦あたりの撃破数",kpr);
+			insert(4,"1戦あたりの撤退数",dpr);
 			function diff(i, t) {
 			var iad = Math.round((cd[i]-pcd[i])*100)/100;
 			var pm = "±";
