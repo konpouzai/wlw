@@ -1,5 +1,10 @@
-WLWブックマークレット + 1
+WLWブックマークレット + 1.1
 ====
+
+本ブックマークレットは、plz-monoeye-cast氏が作成した「WLWブックマークレット+1」に毛を生やして+1.1としたものです。
+まだ作りかけなので、使っちゃだめだよ。
+
+以下、本家の説明文
 
 本ブックマークレットでは、&copy;SEGAが提供するWonderland Warsにおける[Wonderland.NET](https://wonderland-wars.net/)のマイキャストページの表示をカスタマイズする機能を提供します。
 
@@ -140,6 +145,7 @@ Wonderland Wars ワンダーランドウォーズ
 32ページ目 > [833 ID:GUHfLX0k0](https://github.com/syara-temp/wlw)
 
 plz-monoeye-cast（追加機能部分）
+konpouzai (毛を生やした)
 
 ##参考元
 [本気でやっつけてやるんだから！](https://github.com/wlw-bookmarklet/matchlog/blob/master/README.md)
