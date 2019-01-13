@@ -153,12 +153,12 @@ if(d.URL == CAST_LIST_URL){
 		// 1戦あたりの撃破数 ... kill per round
 		var kpr = 0;
 		if ((wc+lc)!=0) {
-		kpr = Math.round(crc/(wc+lc));
+		kpr = Math.round(crc/(wc+lc)*100)/100;
 		}
 		// 1戦あたりの撤退数 ... death per round
 		var dpr = 0;
 		if ((wc+lc)!=0) {
-		dpr = Math.round(wdc/(wc+lc));
+		dpr = Math.round(wdc/(wc+lc)*100)/100;
 		}
 
 		// 全キャスト勝率 ... all win rate
