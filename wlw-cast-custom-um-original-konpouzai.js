@@ -134,6 +134,10 @@ if(d.URL == CAST_LIST_URL){
 		var wn = parseFloat(p2[4].innerHTML);
 		// 敗北時(平均) ... lose nice
 		var ln = parseFloat(p2[5].innerHTML);
+		// 1戦あたりのキル数 ... kill per round
+		var kpr = parseFloat(p2[6].innerHTML);
+		// 1戦あたりのデス数 ... death per round
+		var dpr = parseFloat(p2[7].innerHTML);
 
 		// 敗北数 ... lose count
 		var lc = 0;
@@ -322,7 +326,7 @@ if(d.URL == CAST_LIST_URL){
 			diff(i+1, np1[i]);
 			}
 			var np2 = nfi.querySelectorAll('.block_playdata_02_text');
-			for (var i = 0; i < 6; i++) {
+			for (var i = 0; i < 8; i++) {
 			diff(i+8, np2[i]);
 			}
 			insert(6, "全キャスト勝率", awr+"% <span class=\"font_small\">("+awc+"勝"+alc+"敗)</span>");
